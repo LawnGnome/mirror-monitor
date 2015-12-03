@@ -36,10 +36,10 @@ class MonitorCommand extends Command {
 
       $output->writeln(sprintf('<bg=green>%s</>', $last->format('Y-m-d H:i:s')));
       list($success, $failed) = $cycle->run();
-      $output->writeln(sprintf('<fg=green>%d</> successful; <fg=red>%d</> failed', count($success), count($failed)));
-      if ($output->isVerbose()) {
-        $output->writeln(sprintf('  <fg=red>Failed URLs:</> %s', implode("\n               ", $failed)));
+      if ($output->isVerbose() && count($failed) > 0) {
+        $output->writeln(sprintf('<fg=red>Failed URLs:</> %s', implode("\n             ", $failed)));
       }
+      $output->writeln(sprintf('<fg=green>%d</> successful; <fg=red>%d</> failed', count($success), count($failed)));
       $output->writeln('');
 
       $next = $last->add(new DateInterval("PT{$every}S"));
