@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+include __DIR__.'/../vendor/autoload.php';
+
+use LawnGnome\MirrorMonitor\MonitorCommand;
+use Symfony\Component\Console\Application as ConsoleApplication;
+
+$console = new ConsoleApplication;
+$console->add(new MonitorCommand);
+$console->run();

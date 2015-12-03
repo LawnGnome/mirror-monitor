@@ -1,0 +1,15 @@
+{
+  "name": "lawngnome/mirror-monitor",
+  "description": "A basic command for monitoring HTTP mirrors",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.0.0",
+    "guzzlehttp/guzzle": "^6",
+    "symfony/console": "^3"
+  },
+  "autoload": {
+    "psr-4": {
+      "LawnGnome\\MirrorMonitor\\": "src/"
+    }
+  }
+}
